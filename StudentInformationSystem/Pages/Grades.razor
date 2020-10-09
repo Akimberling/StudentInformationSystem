@@ -1,0 +1,50 @@
+﻿@page "/Grades"
+
+<style>
+    table
+    {
+        font-family: Arial;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th
+    {
+        border: 1px solid black;
+        text-align:center;
+        padding:8px;
+    }
+
+</style>
+
+<h1>Official Grades</h1>
+<br />
+<table style="width:800px">
+    <tr>
+        <th>Class</th>
+        <th>Description</th>
+        <th>Units</th>
+        <th>Grade</th>
+        <th>Grade Points</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+@*<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}*@
