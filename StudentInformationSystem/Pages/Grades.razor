@@ -1,50 +1,60 @@
 ﻿@page "/Grades"
 
+@using StudentInformationSystem.Data
+@inject StudentGradesService GradeService
+
 <style>
-    table
-    {
+    table {
         font-family: Arial;
         border-collapse: collapse;
         width: 100%;
     }
 
-    td, th
-    {
+    td, th {
         border: 1px solid black;
-        text-align:center;
-        padding:8px;
+        text-align: center;
+        padding: 8px;
     }
-
 </style>
 
+@if (classesToDisplay == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
 <h1>Official Grades</h1>
 <br />
 <table style="width:800px">
-    <tr>
-        <th>Class</th>
-        <th>Description</th>
-        <th>Units</th>
-        <th>Grade</th>
-        <th>Grade Points</th>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Description</th>
+            <th>Units</th>
+            <th>Grade</th>
+            <th>Grade Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var curClass in classesToDisplay)
+        {
+        <tr>
+            <td>@curClass.ClassName</td>
+            <td>@curClass.Description</td>
+            <td>@curClass.Units</td>
+            <td>@string.Format("{0:N2}", curClass.Grade)</td>
+            <td></td>
+        </tr>
+        }
+    </tbody>
 </table>
-
-@*<p>Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+}
 
 @code {
-    private int currentCount = 0;
+    public Class[] classesToDisplay;
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
-        currentCount++;
+        classesToDisplay = await GradeService.GetGradesAsync();
     }
-}*@
+}
