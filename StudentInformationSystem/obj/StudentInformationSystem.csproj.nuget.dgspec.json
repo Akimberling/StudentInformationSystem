@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Dan/Documents/Documents - ICloud/GitHub/StudentInformationSystem/StudentInformationSystem/StudentInformationSystem.csproj": {}
+    "C:\\Users\\Amber Kimberling\\source\\repos\\StudentInformationSystem\\StudentInformationSystem.csproj": {}
   },
   "projects": {
-    "/Users/Dan/Documents/Documents - ICloud/GitHub/StudentInformationSystem/StudentInformationSystem/StudentInformationSystem.csproj": {
+    "C:\\Users\\Amber Kimberling\\source\\repos\\StudentInformationSystem\\StudentInformationSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Dan/Documents/Documents - ICloud/GitHub/StudentInformationSystem/StudentInformationSystem/StudentInformationSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Amber Kimberling\\source\\repos\\StudentInformationSystem\\StudentInformationSystem.csproj",
         "projectName": "StudentInformationSystem",
-        "projectPath": "/Users/Dan/Documents/Documents - ICloud/GitHub/StudentInformationSystem/StudentInformationSystem/StudentInformationSystem.csproj",
-        "packagesPath": "/Users/Dan/.nuget/packages/",
-        "outputPath": "/Users/Dan/Documents/Documents - ICloud/GitHub/StudentInformationSystem/StudentInformationSystem/obj/",
+        "projectPath": "C:\\Users\\Amber Kimberling\\source\\repos\\StudentInformationSystem\\StudentInformationSystem.csproj",
+        "packagesPath": "C:\\Users\\Amber Kimberling\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amber Kimberling\\source\\repos\\StudentInformationSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/Dan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Amber Kimberling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
