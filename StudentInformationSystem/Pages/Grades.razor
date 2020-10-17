@@ -17,37 +17,41 @@
     }
 </style>
 
-@if (classesToDisplay == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-<h1>Official Grades</h1>
-<br />
-<table style="width:800px">
-    <thead>
-        <tr>
-            <th>Class</th>
-            <th>Description</th>
-            <th>Units</th>
-            <th>Grade</th>
-            <th>Grade Points</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var curClass in classesToDisplay)
-        {
-        <tr>
-            <td>@curClass.ClassName</td>
-            <td>@curClass.Description</td>
-            <td>@curClass.Units</td>
-            <td>@string.Format("{0:N2}", curClass.Grade)</td>
-            <td></td>
-        </tr>
-        }
-    </tbody>
-</table>
+    @if (classesToDisplay == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <h1>Official Grades</h1>
+        <br />
+        <table style="width:800px">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                    <th>Units</th>
+                    <th>Grade</th>
+                    <th>Grade Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var curClass in classesToDisplay)
+                {
+                    <tr>
+                        <td>@curClass.ClassName</td>
+                        <td>@curClass.Description</td>
+                        <td>@curClass.Units</td>
+                        <td>@string.Format("{0:N2}", curClass.Grade)</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <br />
+        <label> GPA </label>
+        <label style="border-bottom-color:black; border:solid; border-width:1px; width:100px; text-align:center" >temp</label>
 }
 
 @code {
@@ -57,4 +61,6 @@ else
     {
         classesToDisplay = await GradeService.GetGradesAsync();
     }
+
+    
 }
