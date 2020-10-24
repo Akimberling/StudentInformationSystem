@@ -30,6 +30,7 @@ namespace StudentInformationSystem
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<StudentGradesService>();
+            services.AddSingleton<StudentClassesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
