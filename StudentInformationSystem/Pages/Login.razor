@@ -1,13 +1,48 @@
 ﻿@page "/"
+@inject NavigationManager UriHelper;
+@inject Data.LoginState loginState; 
 
 <h1 style="text-align:center">Login</h1>
 
-
+@if (loginState.IsLoggedIn.Equals(false))
+{
 <div style="text-align:center">
     <label>Username </label>
-    <input id="UserName: " name="UserName" type="text" />
+    <input id="UserName: " name="UserName" type="text" @bind-value="username" />
 </div>
 <div style=" text-align:center">
     <label>Password </label>
-    <input id="Password" name="Password" type="text" />
+    <input id="Password" name="Password" type="password" @bind-value="password" />
 </div>
+<div style="text-align:center">
+    <button type="submit" @onclick=@HandleLogin>
+        Submit
+    </button>
+</div>
+<p style="text-align:center">
+    Username: 'Student' or 'Educator' or 'Administrator' <br />
+    Password: 'Fullerton'
+</p>
+}
+else
+{
+    <p> Thanks for logging in @loginState.username!</p>
+}
+
+@code {
+
+    string username = "";
+    string password = "";
+    string correctPassword = "Fullerton";
+    void HandleLogin()
+    {
+        if (password.Equals(correctPassword))
+        {
+            if (username.Equals("Student") || username.Equals("Educator") || username.Equals("Administrator"))
+            {
+                loginState.SetLogin(true,username);
+            }
+        }
+    }
+}
+

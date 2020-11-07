@@ -1,7 +1,12 @@
 ﻿@inherits LayoutComponentBase
+@inject Data.LoginState loginState;
+@implements IDisposable;
 
 <div class="sidebar">
+    @if (loginState.IsLoggedIn)
+    {
     <NavMenu />
+    }
 </div>
 
 <div class="main">
@@ -13,3 +18,15 @@
         @Body
     </div>
 </div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        loginState.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        loginState.OnChange -= StateHasChanged;
+    }
+}
